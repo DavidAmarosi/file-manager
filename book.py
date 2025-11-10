@@ -9,7 +9,7 @@ class Book:
         self.is_available = True
 
     def __str__(self):
-        return f"Title : {self.title}, Author : {self.author}, ISBN : {self.ISBN}, is_availble {self.is_available}"
+        return str(["Title : {self.title}, Author : {self.author}, ISBN : {self.ISBN}, is_availble {self.is_available}"])
 
 class Library:
     def __init__(self):
@@ -17,6 +17,16 @@ class Library:
 
     def add_book(self,title,author):
         self.library.append(Book(title,author))
+
+    def add_user(self):
+        pass
+
+    def borrow_book(user_id, book_isbn):
+        pass
+    def return_book(user_id, book_isbn):
+        pass
+    def list_available_books():
+        pass
 
     def print_books(self):
         for book in self.library:
