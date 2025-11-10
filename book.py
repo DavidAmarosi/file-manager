@@ -1,3 +1,4 @@
+from user import User
 class Book:
     ISBN_COUNT = 1000 
 
@@ -14,14 +15,17 @@ class Book:
 class Library:
     def __init__(self):
         self.library = []
+        self.users = []
 
-    def add_book(self,title,author):
-        self.library.append(Book(title,author))
+    def add_book(self,book):
+        self.library.append(book)
 
-    def add_user(self):
-        pass
+    def add_user(self, user):
+        self.users.append(user)
 
-    def borrow_book(user_id, book_isbn):
+    def borrow_book(self,user_id, book_isbn):
+        
+
         pass
     def return_book(user_id, book_isbn):
         pass
