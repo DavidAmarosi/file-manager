@@ -1,4 +1,4 @@
-from user import User
+
 class Book:
     ISBN_COUNT = 1000 
 
