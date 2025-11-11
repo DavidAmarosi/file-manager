@@ -79,22 +79,6 @@ class Library:
             list_of_users : self.users,
             number_of_books : len(self.library),
         },
-        #books
-        {
-            ISBN_COUNT : ISBN_COUNT, #  -> the count of the curent id book 
-            title : title,
-            author : author,
-            ISBN : Book.ISBN_COUNT,
-            is_available : True,
-        },
-        #users
-        {
-            name : name,
-            id : User.UID,
-            borrowed_books : [],
-        }   `   
-    ]  
-    """
         library = []
 
         books = []
@@ -103,10 +87,7 @@ class Library:
             books.append(current)
         
 
-
-
-
-
+        """
 
 
 
