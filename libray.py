@@ -2,14 +2,7 @@ from book import Book
 from user import User
 
 class Library:
-    """
-    add_book -> 🟩
-    add_user ->  🟩
-    borrow_book -> 🟩
-    return_book -> 
-    print_books_title -> 🟩
-    print_books ->  🟩
-    """
+   
     def __init__(self):
         self.library = []
         self.users = []
@@ -17,18 +10,13 @@ class Library:
     def add_book(self,title,author):
         self.library.append(Book(title,author))
 
-    #TODO: REMOVE TEST 
-    def add_user(self):
-        # new_user_name = input("enter new user name: ")
-        new_user_name = "test name"
-        new_user = User(new_user_name)
-        self.users.append(new_user)
+   
+    def add_user(self,user,user_name):
+        user = User(user_name)
+        self.users.append(user)
 
     def borrow_book(self,user_id,book_to_borrow):
-        # pass to is_availble -> title or id -> get book object
         check = library.is_availble(book_to_borrow)
-
-
         if check:
             for user in library.users:
                 if user.id == user_id:
@@ -57,10 +45,6 @@ class Library:
                     return False
                 
 
-    def print_books_titles(self):
-        for book in self.library:
-            print(book.title)
-
     def print_books(self):
         for book in self.library:
             print(book)
@@ -71,36 +55,16 @@ class Library:
                 user.name = new_name
 
     def flatten_library(self) -> list[dict]:
-        """
-        library = [
-        #library main
-        {
-            list_of_books : self.library,
-            list_of_users : self.users,
-            number_of_books : len(self.library),
-        },
-        library = []
 
         books = []
         for book in self.library:
-            current = book.flatten_book()
+            current = vars(book)
             books.append(current)
-        
 
-        """
-
-
-
-
-
-
-
-
-
-
-
-
-
+        users = []
+        for user in self.users:
+            current = vars(user)
+            users.append(current)
 
     def __str__(self):
         title_list = [book for book in self.library]
@@ -116,8 +80,6 @@ library.add_user()
 library.add_user()
 library.add_user()
 library.add_user()
-# library.print_books()
-
 library.borrow_book(2000,"brachot")
 
 print()
